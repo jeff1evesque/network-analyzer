@@ -77,10 +77,6 @@ Vagrant.configure(2) do |config|
   config.ssh.username = $ssh_username
   config.ssh.password = $ssh_password
 
-  ## Run r10k
-  config.r10k.puppet_dir      = 'puppet/environments/vagrant'
-  config.r10k.puppetfile_path = 'puppet/environments/vagrant/Puppetfile'
-
   # clean up files on the host after 'vagrant destroy'
   config.trigger.after :destroy do
     run 'rm -f centos/.ssh/private2'
